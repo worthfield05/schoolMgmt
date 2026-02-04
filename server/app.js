@@ -6,6 +6,7 @@ import studentRoute from './routes/student.route.js'
 import teacherRoute from './routes/teacher.route.js'
 import classRoute from './routes/class.route.js'
 import subjectRoute from './routes/subject.route.js'
+import attendanceRoute from './routes/attendance.route.js'
 import errorMiddleware from './middleware/error.middleware.js';
 import cookieParser from 'cookie-parser';
 dotenv.config({path:"./config/config.env"})
@@ -19,5 +20,6 @@ app.use("/api/student",studentRoute)
 app.use("/api/teacher",teacherRoute)
 app.use("/api/classes",classRoute)
 app.use("/api/subject",subjectRoute)
+app.use("/api/attendance",attendanceRoute)
 app.use(errorMiddleware)
 export default app;
