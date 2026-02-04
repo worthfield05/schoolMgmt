@@ -6,9 +6,11 @@ export const setToken = (statusCode, user, res) => {
     ),
     httpOnly: true,
   };
+  const userObj = user.toObject();
+  delete userObj.password
   res.status(statusCode).cookie("token", token, options).json({
     success: true,
-    user,
+    data:userObj,
     token,
   });
 };
